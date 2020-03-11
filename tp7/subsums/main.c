@@ -6,7 +6,7 @@ int x[34];
 int a;
 int b;
 
-int count;
+unsigned long long count;
 
 void rec(int sum, int i) {
     if(sum + x[i] >= a && sum + x[i] <= b) {
