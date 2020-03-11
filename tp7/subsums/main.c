@@ -9,10 +9,11 @@ int b;
 unsigned long long count;
 
 void rec(int sum, int i) {
-    if(i > nb) count++;
-    if(sum + x[i] >= a && sum + x[i] <= b) {
-        rec(sum + x[i], i+1);
+    if(i >= nb) {
+        if(sum >= a && sum <= b) count++;
+        return;
     }
+    rec(sum + x[i], i+1);
     rec(sum, i+1);
 }
 
@@ -27,7 +28,7 @@ int main(int argc, char const *argv[]) {
 
     rec(0, 0);
 
-    printf("%llu", count);
+    printf("%llu\n", count);
 
     return 0;
 }
