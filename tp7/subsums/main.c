@@ -18,9 +18,9 @@ void rec(int sum, int i) {
 
 int main(int argc, char const *argv[]) {
 
-    fscanf(STDIN_FILENO, "%i %i %i", &nb, &a, &b);
+    scanf("%i %i %i", &nb, &a, &b);
     for (int i = 0; i < nb; i++) {
-        fscanf(STDIN_FILENO, "%i", &(x[i]));
+        scanf("%i", &(x[i]));
     }
 
     count = 0;
