@@ -27,7 +27,7 @@ int main(int argc, char const *argv[]) {
 
     rec(0, 0);
 
-    printf("%i", count);
+    printf("%llu", count);
 
     return 0;
 }
