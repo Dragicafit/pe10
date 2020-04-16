@@ -8,12 +8,40 @@ int b;
 
 unsigned long long count;
 
-void rec(int sum, int i) {
-    if(i > nb) count++;
-    if(sum + x[i] >= a && sum + x[i] <= b) {
-        rec(sum + x[i], i+1);
+long sum(long ensemble) {
+    long ret = 0;
+    for(int i = 0; i < 34; ++i) {
+        if((ensemble & (1 << i)) > 0) {
+            ret += x[i];
+        }
     }
-    rec(sum, i+1);
+    return ret;
+}
+
+void rec(long ensemble) {
+    long somme = sum(ensemble);
+    if(somme < a) {
+        for(int i = 0; i < 34; ++i) {
+            if(x[i] > 0 && (somme + x[i]) <= b && ((ensemble & (1 << i)) > 0)) {
+                ++count;
+                rec(ensemble ^ (1<<i));
+            }
+        }
+    } else if(somme > b) {
+        for(int i = 0; i < 34; ++i) {
+            if(x[i] < 0 && (somme + x[i]) >= a && ((ensemble & (1 << i)) > 0)) {
+                ++count;
+                rec(ensemble ^ (1<<i));
+            }
+        }
+    } else {
+        for(int i = 0; i < 34; ++i) {
+            if ((somme + x[i]) <= b && (somme + x[i]) >= a && ((ensemble & (1 << i)) > 0)) {
+                ++count;
+                rec(ensemble ^ (1 << i));
+            }
+        }
+    }
 }
 
 int main(int argc, char const *argv[]) {
@@ -23,11 +51,11 @@ int main(int argc, char const *argv[]) {
         scanf("%i", &(x[i]));
     }
 
-    count = 0;
+    count = 1;
 
-    rec(0, 0);
+    rec(0);
 
-    printf("%i", count);
+    printf("%llu", count);
 
     return 0;
 }

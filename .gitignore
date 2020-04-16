@@ -1,61 +1,111 @@
-# Prerequisites
-*.d
+# This file is used to ignore files which are generated
+# ----------------------------------------------------------------------------
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
+*~
+*.autosave
 *.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
+*.core
+*.moc
+*.o
+*.obj
+*.orig
+*.rej
 *.so
 *.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
+*_pch.h.cpp
+*_resource.rc
+*.qm
+.#*
+*.*#
+core
+!core/
+tags
+.DS_Store
+.directory
+*.debug
+*.prl
 *.app
-*.i*86
-*.x86_64
-*.hex
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+Thumbs.db
+*.res
+*.rc
+/.qmake.cache
+/.qmake.stash
 
-# Debug files
-*.dSYM/
-*.su
+# qtcreator generated files
+*.pro.user*
+
+# xemacs temporary files
+*.flc
+
+# Vim temporary files
+.*.swp
+
+# Visual Studio generated files
+*.ib_pdb_index
 *.idb
+*.ilk
 *.pdb
+*.sln
+*.suo
+*.vcproj
+*vcproj.*.*.user
+*.ncb
+*.sdf
+*.opensdf
+*.vcxproj
+*vcxproj.*
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# MinGW generated files
+*.Debug
+*.Release
 
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
+# Python byte code
+*.pyc
 
-main
+# Binaries
+# --------
+*.dll
+*.exe
+build/ctop
+cmake-build-debug/
+release/
+release-debug/
+.kdev4/
+*.kdev4
+.vs/
+CMakeSettings.json
+*~
+CMakeLists.txt.user
+*.autosave
+.idea/*
+*build*
+
+# ---> Java
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+*target*
+/tp2/.gradle/
+*cmake-build*
+*.idea*
